@@ -21,3 +21,9 @@ functions:
       - http:
           path: /
           method: get
+  chainInfo:
+    handler: api/chainInfo/handler.main
+    events:
+      - http:
+          path: /chaininfo
+          method: get
