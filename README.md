@@ -1,6 +1,16 @@
-# Serverless Python Starter [![Seed Status](https://api.seed.run/serverless-stack/serverless-python-starter/stages/dev/build_badge)](https://console.seed.run/serverless-stack/serverless-python-starter)
+# Chain Spy BackEnd
 
-A Python starter project for [Serverless Framework](https://serverless.com/framework/) with support for dependencies (using [virtualenv](https://pypi.python.org/pypi/virtualenv) & [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements)) and tests (using [unittest](https://docs.python.org/2/library/unittest.html#module-unittest)).
+This is a Python Project built on the [Serverless Framework](https://serverless.com/framework/) with support for dependencies (using [virtualenv](https://pypi.python.org/pypi/virtualenv) & [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements)) and tests (using [unittest](https://docs.python.org/2/library/unittest.html#module-unittest)).
+
+### How to Use.
+
+---
+
+A thorough overview of the repo at [Notion](https://denim-icebreaker-af6.notion.site/Backend-x-Data-78f66c1a02d843928bf263b9f370950c).
+
+In order to promote a healthy and collaborative repo, please fork the repo and clone your fork to you machine to begin. Follow this [guide on collaborating](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/).
+
+---
 
 ### Requirements
 
