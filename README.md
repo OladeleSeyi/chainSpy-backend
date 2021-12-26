@@ -42,7 +42,7 @@ For Macs
 
 ```sh
 $ cd chainSpy-backend
-$ virtualenv -p /opt/homebrew/bin/python3.9 venv
+$ virtualenv -p /usr/bin/python3.6 venv
 ```
 
 For M1 Macs using Homebrew installed Python
