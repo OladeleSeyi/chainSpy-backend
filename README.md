@@ -26,14 +26,14 @@ In order to promote a healthy and collaborative repo, please fork the repo and c
 Create a new project
 
 ```sh
-$ serverless install --url https://github.com/AnomalyInnovations/serverless-python-starter --name my-project
+$  git clone https://github.com/OladeleSeyi/chainSpy-backend.git
 ```
 
 Create a virtual environment for your project for Intel
 
 ```sh
 $ cd chainSpy-backend
-$ virtualenv -p /usr/bin/python3.6 venv
+$ virtualenv -p /usr/bin/python3 venv
 ```
 
 ---
@@ -42,7 +42,7 @@ For Macs
 
 ```sh
 $ cd chainSpy-backend
-$ virtualenv -p /usr/bin/python3.6 venv
+$ virtualenv -p /usr/bin/python3 venv
 ```
 
 For M1 Macs using Homebrew installed Python
@@ -132,13 +132,3 @@ custom:
 ```
 
 **Note**, if you are deploying using [SEED](https://seed.run), you don't need to enable **dockerizePip** or install Docker. [SEED](https://seed.run) does it automatically.
-
-### Support
-
-- Send us an [email](mailto:contact@anoma.ly) if you have any questions
-- Open a [new issue](https://github.com/AnomalyInnovations/serverless-python-starter/issues/new) if you've found a bug or have some suggestions.
-- Or submit a pull request!
-
-### Maintainers
-
-Maintained by Frank Wang ([@fanjiewang](https://twitter.com/fanjiewang)) & Jay V ([@jayair](https://twitter.com/jayair)). [**Subscribe to our newsletter**](http://eepurl.com/cEaBlf) for updates. Send us an [email](mailto:contact@anoma.ly) if you have any questions.
