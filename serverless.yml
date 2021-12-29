@@ -1,8 +1,9 @@
 service: chainSpy-backend
 
 plugins:
-  - serverless-python-requirements
+  # - serverless-python-requirements
   - serverless-offline
+  - serverless-dotenv-plugin
 
 custom:
   pythonRequirements:
@@ -13,6 +14,8 @@ provider:
   runtime: python3.9
   stage: dev
   region: us-east-1
+  environment:
+    positionKey: ${env:POSITION_KEY}
 
 functions:
   hello:
@@ -26,4 +29,4 @@ functions:
     events:
       - http:
           path: /chaininfo
-          method: get
+          method: post
