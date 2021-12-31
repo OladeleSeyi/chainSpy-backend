@@ -1,11 +1,17 @@
 import json
 
-def main(event, context):
-  body = {
-    "message": "Go Serverless v1.0! Your function executed successfully!",
-  }
+from api.chainInfo.functions.getLocalCurrencyValue import getLocalCurrencyValue
 
-  return {
-      "statusCode": 200,
-      "body": json.dumps(body)
-  }
+
+def main(event, context):
+
+    local_currency_value = getLocalCurrencyValue(4, 4500)
+    body = {
+        "message": "Go Serverless v1.0! Your function executed successfully!",
+        "local_currency_value": local_currency_value
+    }
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps(body)
+    }
