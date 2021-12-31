@@ -1,11 +1,15 @@
 import json
 
-def main(event, context):
-  body = {
-    "message": "Go Serverless v1.0! Your function executed successfully!",
-  }
+from api.chainInfo.functions.getExchange import getExchangeRate
 
-  return {
-      "statusCode": 200,
-      "body": json.dumps(body)
-  }
+
+def main(event, context):
+    exchange_rate = getExchangeRate("AED")
+    body = {
+        "message": "Go Serverless v1.0! Your function executed successfully!",
+    }
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps(body)
+    }

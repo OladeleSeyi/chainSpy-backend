@@ -3,6 +3,7 @@ service: chainSpy-backend
 plugins:
   - serverless-python-requirements
   - serverless-offline
+  - serverless-dotenv-plugin
 
 custom:
   pythonRequirements:
@@ -10,9 +11,12 @@ custom:
 
 provider:
   name: aws
-  runtime: python3.9
+  runtime: python3.8
   stage: dev
   region: us-east-1
+  lambdaHashingVersion: 20201221
+  environment:
+    exchangeRateKey: ${env:OPEN_EX_RATES_KEY}
 
 functions:
   hello:
