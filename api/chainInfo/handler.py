@@ -1,11 +1,16 @@
 import json
 
-def main(event, context):
-  body = {
-    "message": "Go Serverless v1.0! Your function executed successfully!",
-  }
+from api.chainInfo.functions.getCoinPrice import getCoinPrice
 
-  return {
-      "statusCode": 200,
-      "body": json.dumps(body)
-  }
+
+def main(event, context):
+
+    getCoinPrice("SOL")
+    body = {
+        "message": "Go Serverless v1.0! Your function executed successfully!",
+    }
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps(body)
+    }
