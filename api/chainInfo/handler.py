@@ -5,6 +5,9 @@ from api.chainInfo.functions.getGasPrices import getGasPrices
 from api.chainInfo.functions.getExchange import getExchangeRate
 
 
+from api.chainInfo.functions.getLocalCurrencyValue import getLocalCurrencyValue
+
+
 def main(event, context):
     try:
         body = {}
