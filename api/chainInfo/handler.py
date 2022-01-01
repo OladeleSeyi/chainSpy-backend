@@ -3,8 +3,6 @@ from api.chainInfo.functions.getLocalCurrency import getLocalCurrency
 from api.chainInfo.functions.getCoinPrice import getCoinPrice
 from api.chainInfo.functions.getGasPrices import getGasPrices
 from api.chainInfo.functions.getExchange import getExchangeRate
-
-
 from api.chainInfo.functions.getLocalCurrencyValue import getLocalCurrencyValue
 
 
@@ -32,21 +30,19 @@ def main(event, context):
         # Create prediction
 
         data = {
-            "message": "Successful",
             "coin": body['coin'],
-            "token_price": token_price,
             "local_currency": local_currency['local_currency'],
             "currency_symbol": local_currency['currency_symbol'],
             "exchange_rate": exchange_rate,
+            "token_price": token_price,
+            "token_local_price": getLocalCurrencyValue(exchange_rate, token_price),
+            "gas_prices": gas_prices['gasPricesGwei'],
             "gas_price_dollar_high": gas_prices['fast'],
-            "gas_price_local_high": 30000,
+            "gas_price_local_high": getLocalCurrencyValue(exchange_rate, gas_prices['fast']),
             "gas_price_dollar_mid": gas_prices['average'],
-            "gas_price_local_mid": 150900,
+            "gas_price_local_mid": getLocalCurrencyValue(exchange_rate, gas_prices['average']),
             "gas_price_dollar_low": gas_prices['safe_low'],
-            "gas_price_local_low": 5799,
-            "currency": local_currency,
-            "token": token_price,
-            "gas_prices": gas_prices['gasPricesGwei']
+            "gas_price_local_low": getLocalCurrencyValue(exchange_rate, gas_prices['safe_low'])
         }
 
         return {
