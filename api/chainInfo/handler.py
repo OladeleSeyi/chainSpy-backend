@@ -1,3 +1,4 @@
+from api.chainInfo.functions.getLocalCurrency import getLocalCurrency
 import json
 #   1.  Receive and validate the request
 # 2. Get the local currency
@@ -11,18 +12,30 @@ import json
 # 7. Return the response.
 
 
+
 def main(event, context):
+
     try:
-        body = {
-            "message": "Go Serverless v1.0! Your function executed successfully!",
+        body = {}
+
+        try:
+            body = json.loads(event['body'])
+        except:
+            exit
+
+        data = {
+            "message": "This is sample data for development",
+            "currencies": getLocalCurrency(body["location"],   event["requestContext"]["identity"]["sourceIp"]),
+            "event": event
         }
 
         return {
             "statusCode": 200,
-            "body": json.dumps(body)
+            "body": json.dumps(data),
         }
     except:
         return {
             "statusCode": 500,
             "body": "An error occured"
         }
+

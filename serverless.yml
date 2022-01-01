@@ -11,9 +11,12 @@ custom:
 
 provider:
   name: aws
-  runtime: python3.9
+  runtime: python3.8
   stage: dev
   region: us-east-1
+  lambdaHashingVersion: 20201221
+  environment:
+    positionKey: ${env:POSITION_KEY}
 
 functions:
   hello:
@@ -27,4 +30,4 @@ functions:
     events:
       - http:
           path: /chaininfo
-          method: get
+          method: post
