@@ -29,14 +29,23 @@ def main(event, context):
         # 2 Get token Price
         token_price = getCoinPrice(body['coin'])
 
+        gas_prices = getGasPrices(token_price)
+
         data = {
             "message": "Successful",
             "coin": body['coin'],
             "token_price": token_price,
-            "local_currency": local_currency["local_currency"],
-            "currency_symbol": local_currency["currency_symbol"],
+            "local_currency": local_currency['local_currency'],
+            "currency_symbol": local_currency['currency_symbol'],
+            "gas_price_dollar_high": gas_prices['fast'],
+            "gas_price_local_high": 30000,
+            "gas_price_dollar_mid": gas_prices['average'],
+            "gas_price_local_mid": 150900,
+            "gas_price_dollar_low": gas_prices['safe_low'],
+            "gas_price_local_low": 5799,
             "currency": local_currency,
-            "token": token_price
+            "token": token_price,
+            "gas_prices": gas_prices['gasPricesGwei']
         }
 
         return {
