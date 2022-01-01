@@ -23,13 +23,13 @@ def main(event, context):
             body = json.loads(event['body'])
         except:
             raise Exception("An error occured")
-            exit
-        
-        local_currency = getLocalCurrency(body["location"],   event["requestContext"]["identity"]["sourceIp"])
+
+        local_currency = getLocalCurrency(
+            body["location"],   event["requestContext"]["identity"]["sourceIp"])
         data = {
             "message": "Successful",
-            "currencies": local_currency
-           
+            "currency": local_currency
+
         }
 
         return {
