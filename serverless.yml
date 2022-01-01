@@ -17,6 +17,7 @@ provider:
   lambdaHashingVersion: 20201221
   environment:
     positionKey: ${env:POSITION_KEY}
+    coinMCapKey: ${env:COIN_CAP_KEY}
 
 functions:
   hello:

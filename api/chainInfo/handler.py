@@ -12,8 +12,10 @@ import json
 # 7. Return the response.
 
 
-def main(event, context):
+from api.chainInfo.functions.getCoinPrice import getCoinPrice
 
+
+def main(event, context):
     try:
         body = {}
 
@@ -22,10 +24,12 @@ def main(event, context):
         except:
             raise Exception("An error occured")
             exit
-
+        
+        local_currency = getLocalCurrency(body["location"],   event["requestContext"]["identity"]["sourceIp"])
         data = {
             "message": "Successful",
-            "currencies": getLocalCurrency(body["location"],   event["requestContext"]["identity"]["sourceIp"])
+            "currencies": local_currency
+           
         }
 
         return {
