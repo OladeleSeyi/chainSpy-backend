@@ -2,7 +2,7 @@ import json
 from api.chainInfo.functions.getLocalCurrency import getLocalCurrency
 from api.chainInfo.functions.getCoinPrice import getCoinPrice
 from api.chainInfo.functions.getGasPrices import getGasPrices
-
+from api.chainInfo.functions.getExchange import getExchangeRate
 
 
 def main(event, context):
@@ -23,7 +23,7 @@ def main(event, context):
         gas_prices = getGasPrices(token_price)
 
         # 5 Get exchange rate
-        
+        exchange_rate = getExchangeRate(local_currency['local_currency_code'])
         # 6 generate all local currency values
 
         # Create prediction
@@ -34,6 +34,7 @@ def main(event, context):
             "token_price": token_price,
             "local_currency": local_currency['local_currency'],
             "currency_symbol": local_currency['currency_symbol'],
+            "exchange_rate": exchange_rate,
             "gas_price_dollar_high": gas_prices['fast'],
             "gas_price_local_high": 30000,
             "gas_price_dollar_mid": gas_prices['average'],
