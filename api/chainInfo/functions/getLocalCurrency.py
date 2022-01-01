@@ -1,6 +1,5 @@
 import requests
 import os
-import json
 
 access_key = os.environ['positionKey']
 

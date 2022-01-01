@@ -12,7 +12,6 @@ import json
 # 7. Return the response.
 
 
-
 def main(event, context):
 
     try:
@@ -21,12 +20,12 @@ def main(event, context):
         try:
             body = json.loads(event['body'])
         except:
+            raise Exception("An error occured")
             exit
 
         data = {
-            "message": "This is sample data for development",
-            "currencies": getLocalCurrency(body["location"],   event["requestContext"]["identity"]["sourceIp"]),
-            "event": event
+            "message": "Successful",
+            "currencies": getLocalCurrency(body["location"],   event["requestContext"]["identity"]["sourceIp"])
         }
 
         return {
@@ -38,4 +37,3 @@ def main(event, context):
             "statusCode": 500,
             "body": "An error occured"
         }
-
