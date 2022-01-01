@@ -18,6 +18,7 @@ provider:
   environment:
     positionKey: ${env:POSITION_KEY}
     coinMCapKey: ${env:COIN_CAP_KEY}
+    exchangeRateKey: ${env:OPEN_EX_RATES_KEY}
 
 functions:
   hello:
