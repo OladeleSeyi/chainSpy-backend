@@ -1,5 +1,8 @@
-from api.chainInfo.functions.getLocalCurrency import getLocalCurrency
 import json
+from api.chainInfo.functions.getLocalCurrency import getLocalCurrency
+from api.chainInfo.functions.getCoinPrice import getCoinPrice
+
+
 #   1.  Receive and validate the request
 # 2. Get the local currency
 #     1. using the provided lat and longitude values get the local  currency of the user and the symbol from [PositionStack Api](https://positionstack.com/) .
@@ -12,9 +15,6 @@ import json
 # 7. Return the response.
 
 
-from api.chainInfo.functions.getCoinPrice import getCoinPrice
-
-
 def main(event, context):
     try:
         body = {}
@@ -23,13 +23,20 @@ def main(event, context):
             body = json.loads(event['body'])
         except:
             raise Exception("An error occured")
-
+        # Get local Currency
         local_currency = getLocalCurrency(
             body["location"],   event["requestContext"]["identity"]["sourceIp"])
+        # 2 Get token Price
+        token_price = getCoinPrice(body['coin'])
+
         data = {
             "message": "Successful",
-            "currency": local_currency
-
+            "coin": body['coin'],
+            "token_price": token_price,
+            "local_currency": local_currency["local_currency"],
+            "currency_symbol": local_currency["currency_symbol"],
+            "currency": local_currency,
+            "token": token_price
         }
 
         return {
