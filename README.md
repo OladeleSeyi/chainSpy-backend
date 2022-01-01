@@ -78,6 +78,8 @@ Run on your Machine
 sls offline start
 ```
 
+While this may be buggy on M1 macs, I hope it works for you.
+
 Store a reference to your dependencies
 
 ```sh
