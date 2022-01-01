@@ -15,13 +15,14 @@ def getGasPrices(token_price):
 
     res_data = response.json()
 
-    safe_low = (res_data['safeLow'], min_fee, token_price)
+    safe_low = convert_Gwei_To_USD(res_data['safeLow'], min_fee, token_price)
 
     average = convert_Gwei_To_USD(res_data['average'], min_fee, token_price)
 
     fast = convert_Gwei_To_USD(res_data['fast'], min_fee, token_price)
 
     return {
+        'gasPricesGwei': (res_data['safeLow'], res_data['average'], res_data['fast']),
         'safe_low': safe_low,
         'average': average,
         'fast': fast
