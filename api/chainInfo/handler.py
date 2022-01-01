@@ -1,7 +1,7 @@
 import json
 from api.chainInfo.functions.getLocalCurrency import getLocalCurrency
 from api.chainInfo.functions.getCoinPrice import getCoinPrice
-
+from api.chainInfo.functions.getGasPrices import getGasPrices
 
 #   1.  Receive and validate the request
 # 2. Get the local currency
