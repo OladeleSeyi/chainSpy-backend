@@ -29,7 +29,14 @@ def main(event, context):
         # 2 Get token Price
         token_price = getCoinPrice(body['coin'])
 
+        # 4 Get gas Prices
         gas_prices = getGasPrices(token_price)
+
+        # 5 Get exchange rate
+
+        # 6 generate all local currency values
+
+        # Create prediction
 
         data = {
             "message": "Successful",
