@@ -29,16 +29,16 @@ Create a new project
 $  git clone https://github.com/OladeleSeyi/chainSpy-backend.git
 ```
 
-Create a virtual environment for your project for Intel
+Create a virtual environment for your project for Windows
 
 ```sh
 $ cd chainSpy-backend
-$ virtualenv -p /usr/bin/python3 venv
+$ python -m venv venv
 ```
 
 ---
 
-For Macs
+For Intel Macs
 
 ```sh
 $ cd chainSpy-backend
@@ -54,8 +54,16 @@ $ virtualenv -p /opt/homebrew/bin/python3.9 venv
 
 Activate the virtual environment
 
+MAC
+
 ```sh
 $ source venv/bin/activate
+```
+
+`Windows`
+
+```sh
+$  source myenv/Scripts/activate
 ```
 
 Install Serverless plugin: serverless-python-requirements
