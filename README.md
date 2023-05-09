@@ -1,5 +1,7 @@
 # Chain Spy BackEnd
 
+This project calculates the current cost of gas and returns the value in your currency. It is the Backend for [this project](https://github.com/OladeleSeyi/chainSpy-client)
+
 This is a Python Project built on the [Serverless Framework](https://serverless.com/framework/) with support for dependencies (using [virtualenv](https://pypi.python.org/pypi/virtualenv) & [serverless-python-requirements](https://github.com/UnitedIncome/serverless-python-requirements)) and tests (using [unittest](https://docs.python.org/2/library/unittest.html#module-unittest)).
 
 ### How to Use.
